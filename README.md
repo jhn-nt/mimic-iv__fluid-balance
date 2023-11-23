@@ -1,6 +1,12 @@
 # Fluid Balance Estimation in MIMIC-IV
-A re-adaptation of the code found in [mimic-iv/concepts/fluid-balance](https://github.com/MIT-LCP/mimic-code/tree/fluid-balance/mimic-iv/concepts/fluid-balance).
+A re-adaptation of the code found in [mimic-iv/concepts/fluid-balance](https://github.com/MIT-LCP/mimic-code/tree/fluid-balance/mimic-iv/concepts/fluid-balance).  
 Tested on BigQuery, MIMIC-IV version 2.2.
+
+To generate the `<your project-id>.mimiciv_derived.fluid_balance` table in your BigQuery, run:
+```python
+python3 -m mimiciv__fluid_balance -p <your project-id>
+```
+
 
 
 ## Acknowledgements
