@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="mimiciv__fluid_balance",
-    version="0.2",
+    version="0.3",
     author="G. Angelotti, MSc",
     packages=["mimiciv__fluid_balance"],
     include_package_data=True,

@@ -4,7 +4,7 @@ from pathlib import Path
 from argparse import ArgumentParser
 
 DATASET_ID="mimiciv_derived"
-TABLE_ID="fluid_balance"
+TABLE_ID="fluid_rates"
 
 
 if __name__=="__main__":
@@ -16,7 +16,7 @@ if __name__=="__main__":
 
     print("1. Connecting to the Client")
     client=bigquery.Client(project=PROJECT_ID)
-    fluid_balance_query=open(Path(__file__).parent / "fluid_balance.sql","r").read()
+    fluid_rates_query=open(Path(__file__).parent / "fluid_rates.sql","r").read()
     
     print("2. Creating the Dataset")
     dataset=bigquery.Dataset(f"{PROJECT_ID}.{DATASET_ID}")
@@ -29,7 +29,7 @@ if __name__=="__main__":
     job_config.destination=table_ref
 
     print("4. Loading...")
-    query_job=client.query(fluid_balance_query,job_config=job_config)
+    query_job=client.query(fluid_rates_query,job_config=job_config)
     query_job.result()
 
     print("5. Complete")

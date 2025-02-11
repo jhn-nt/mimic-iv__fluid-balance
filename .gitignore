@@ -1,3 +1,6 @@
 .devcontainer.json
 requirements.txt
 mimiciv__fluid_balance/__pycache__/
+*.sh
+.devcontainer.json
+*.ipynb
