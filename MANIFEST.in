@@ -1,1 +1,2 @@
 include mimiciv__fluid_balance/fluid_rates.sql
+include mimiciv__fluid_balance/fluid_amounts.sql
