@@ -4,6 +4,8 @@ Tested on BigQuery, MIMIC-IV version 2.2.
 
 This code generates two tables: `fluid_rates` and `fluid_amounts`, reporting respectively rates in `ml/hour` and amounts in `ml` for different selected order categories.
 
+![overview](img/overview.png)
+
 
 ### Requirements
 1. Access to MIMIC-IV. Learn more [here](https://mimic.mit.edu/docs/gettingstarted/).
@@ -18,13 +20,15 @@ Run:
 pip install "git+https://github.com/jhn-nt/mimic-iv__fluid-balance.git"
 ```
 
-
-### Quick Start
 To generate the `<your project-id>.mimiciv_derived.fluid_rates` and `<your project-id>.mimiciv_derived.fluid_amounts`  tables in your BigQuery, run:
 ```python
 python3 -m mimiciv__fluid_balance -p <your project-id>
 ```
 
+### Manual Installation
+If you do not have access to a GCP authenticated environment, you can manually add the tables to your Big Query (or any other database).   
+The procedures to build the tables are defined in `mimiciv__fluid_balance/fluid_rates.sql` and  `mimiciv__fluid_balance/fluid_amounts.sql`.  
+The former should be built first.
 
 
 ## Acknowledgements
