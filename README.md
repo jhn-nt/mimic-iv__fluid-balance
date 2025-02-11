@@ -25,6 +25,14 @@ To generate the `<your project-id>.mimiciv_derived.fluid_rates` and `<your proje
 python3 -m mimiciv__fluid_balance -p <your project-id>
 ```
 
+You can then access the tables simply from BigQuery:
+```sql
+SELECT *
+FROM `<your project-id>.mimiciv_derived.fluid_amounts`
+LIMIT 1000
+```
+Simply recall that this new table will be built on tour project id and not in `physionet-data`.
+
 ### Manual Installation
 If you do not have access to a GCP authenticated environment, you can manually add the tables to your Big Query (or any other database).   
 The procedures to build the tables are defined in `mimiciv__fluid_balance/fluid_rates.sql` and  `mimiciv__fluid_balance/fluid_amounts.sql`.  
